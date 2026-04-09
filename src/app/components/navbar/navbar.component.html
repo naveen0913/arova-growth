@@ -1,0 +1,97 @@
+<!-- Top info bar -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <a href="mailto:info@arovagrowth.com">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        info&#64;arovagrowth.com
+      </a>
+      <a href="tel:+18002248308">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07A19.5 19.5 0 013.07 9.73 19.8 19.8 0 01.04 1.1 2 2 0 012 .04h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +1 (800) 224-8308
+      </a>
+    </div>
+    <div class="topbar-right">
+      <span>Trusted by 5,000+ B2B Brands Globally</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main navbar -->
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="container nav-inner">
+
+    <!-- Logo -->
+    <a class="logo" routerLink="/" (click)="close()">
+      <div class="logo-mark">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+          <path d="M4 28 L16 4 L28 28 Z" fill="white" opacity=".9"/>
+          <path d="M10 20 L22 20" stroke="#f95d14" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">arova<strong>growth</strong></span>
+        <span class="logo-tagline">B2B Data Solutions</span>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <ul class="nav-links">
+      @for (item of navItems; track item.id) {
+        <li class="nav-item"
+            (mouseenter)="setDrop(item.id)"
+            (mouseleave)="clearDrop()">
+          <button class="nav-btn" [class.active]="openDrop() === item.id">
+            {{ item.label }}
+            <svg class="chevron" [class.rotated]="openDrop()===item.id" width="12" height="8" viewBox="0 0 12 8" fill="none">
+              <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="dropdown" [class.show]="openDrop() === item.id">
+            <div class="drop-inner">
+              <p class="drop-head">{{ item.label }}</p>
+              @for (link of item.links; track link) {
+                <a [routerLink]="link.path" class="drop-link" (click)="close()">
+                  <span class="drop-arrow">→</span> {{ link.label }}
+                </a>
+              }
+            </div>
+          </div>
+        </li>
+      }
+      <li><a class="nav-plain" routerLink="/contact" (click)="close()">Contact Us</a></li>
+    </ul>
+
+    <!-- CTA + Hamburger -->
+    <div class="nav-right">
+      <a routerLink="/contact" class="btn btn-orange" (click)="close()">Get A Free Quote</a>
+      <button class="burger" (click)="toggleMenu()" [class.open]="menuOpen()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="mob-drawer" [class.open]="menuOpen()">
+    <ul>
+      @for (item of navItems; track item.id) {
+        <li>
+          <button class="mob-head" (click)="toggleMobDrop(item.id)">
+            {{ item.label }}
+            <svg [class.rotated]="openDrop()===item.id" width="12" height="8" viewBox="0 0 12 8" fill="none">
+              <path d="M1 1.5l5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+          @if (openDrop() === item.id) {
+            <div class="mob-sub">
+              @for (link of item.links; track link) {
+                <a [routerLink]="link.path" (click)="close()">{{ link.label }}</a>
+              }
+            </div>
+          }
+        </li>
+      }
+      <li><a routerLink="/contact" class="mob-cta btn btn-orange" (click)="close()">Get A Free Quote</a></li>
+    </ul>
+  </div>
+</nav>

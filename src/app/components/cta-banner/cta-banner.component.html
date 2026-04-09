@@ -1,0 +1,70 @@
+<section class="cta" id="contact">
+  <div class="cta-bg">
+    <div class="cta-blob cb1"></div>
+    <div class="cta-blob cb2"></div>
+    <div class="cta-grid"></div>
+  </div>
+  <div class="container cta-inner">
+    <!-- Left copy -->
+    <div class="cta-copy">
+      <span class="tag">Get Started Today</span>
+      <h2>Spot, Secure &amp; Seal Deals<br>With <em>Best-in-Class Data</em></h2>
+      <p>Join 5,000+ B2B brands that rely on ArovaGrowth to fill their pipelines. Get your custom prospect list in 2–3 business days.</p>
+      <div class="cta-perks">
+        <div class="perk"><span>⚡</span> 2-3 Day Delivery</div>
+        <div class="perk"><span>🎯</span> 95%+ Accuracy</div>
+        <div class="perk"><span>🔒</span> GDPR Compliant</div>
+        <div class="perk"><span>📞</span> Free Consultation</div>
+      </div>
+    </div>
+
+    <!-- Right form -->
+    <div class="cta-form-wrap">
+      @if (!sent()) {
+        <div class="cta-form">
+          <h3>Get A Free Quote</h3>
+          <p>Fill in your details and our data experts will reach out within 24 hours.</p>
+          <div class="form-fields">
+            <div class="field">
+              <label>Full Name *</label>
+              <input type="text" placeholder="John Smith" [ngModel]="name()" (ngModelChange)="name.set($event)">
+            </div>
+            <div class="field">
+              <label>Work Email *</label>
+              <input type="email" placeholder="john@company.com" [ngModel]="email()" (ngModelChange)="email.set($event)">
+            </div>
+            <div class="field">
+              <label>Company Name</label>
+              <input type="text" placeholder="Acme Corp" [ngModel]="company()" (ngModelChange)="company.set($event)">
+            </div>
+            <div class="field">
+              <label>Service Interested In</label>
+              <select [ngModel]="service()" (ngModelChange)="service.set($event)">
+                <option value="">Select a service...</option>
+                <option>Healthcare Email List</option>
+                <option>Technology Users List</option>
+                <option>C-Level Executives List</option>
+                <option>International Email List</option>
+                <option>Industry-Specific List</option>
+                <option>Data Appending / Enrichment</option>
+                <option>Custom Database</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-orange submit-btn" (click)="onSubmit()">
+            Request Free Quote
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <p class="form-note">🔒 Your data is safe. We never share your information with third parties.</p>
+        </div>
+      } @else {
+        <div class="cta-success">
+          <span class="success-icon">🎉</span>
+          <h3>Thank You, {{ name() }}!</h3>
+          <p>Your quote request has been received. Our data experts will contact you at <strong>{{ email() }}</strong> within 24 hours.</p>
+          <a href="#" class="btn btn-orange" (click)="$event.preventDefault(); sent.set(false)">Submit Another Request</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

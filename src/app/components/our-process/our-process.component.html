@@ -1,0 +1,23 @@
+<section class="process">
+  <div class="container">
+    <div class="proc-top">
+      <span class="tag">The Process</span>
+      <h2 class="section-title">Let's Navigate You Through<br><em>Our Simple 4-Step Process</em></h2>
+    </div>
+    <div class="steps">
+      @for (s of steps; track s.n; let i = $index) {
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num">{{ s.n }}</div>
+            @if (i < steps.length - 1) { <div class="connector"></div> }
+          </div>
+          <div class="step-body">
+            <span class="step-icon">{{ s.icon }}</span>
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

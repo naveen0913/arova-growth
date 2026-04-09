@@ -1,0 +1,13 @@
+.why { padding: 96px 0; background: var(--off-white); }
+.why-top { text-align: center; margin-bottom: 56px; .section-sub { margin: 0 auto; } }
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.why-card {
+  background: var(--white); border-radius: var(--r-md); padding: 30px 26px;
+  border: 1.5px solid var(--border); transition: all .26s ease;
+  &:hover { border-color: var(--teal); transform: translateY(-5px); box-shadow: var(--shadow-md); .why-icon { transform: scale(1.12) rotate(-5deg); } }
+}
+.why-icon { font-size: 38px; display: block; margin-bottom: 14px; transition: transform .26s; }
+h3 { font-size: 17.5px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+p  { font-size: 14px; color: var(--slate); line-height: 1.68; }
+@media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }

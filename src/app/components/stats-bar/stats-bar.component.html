@@ -1,0 +1,15 @@
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      @for (s of stats; track s.value) {
+        <div class="stat">
+          <span class="s-icon">{{ s.icon }}</span>
+          <div>
+            <span class="s-val">{{ s.value }}</span>
+            <span class="s-lbl">{{ s.label }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

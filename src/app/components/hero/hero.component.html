@@ -1,0 +1,91 @@
+<section class="hero">
+  <!-- Layered background -->
+  <div class="hero-bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="grid"></div>
+  </div>
+
+  <div class="container hero-wrap">
+    <!-- Left copy -->
+    <div class="hero-copy">
+      <span class="tag">✦ Next-Gen B2B Data Platform</span>
+      <h1>Targeted Prospect<br>Database For<br>
+        <span class="typed">{{ typed }}<span class="cur">|</span></span>
+      </h1>
+      <p>ArovaGrowth is the next-generation data solution provider. With over a decade of industry experience, our hyper-targeted prospect database helps brands reach their ideal customers faster and smarter.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-orange">Get A Free Quote</a>
+        <a href="#solutions" class="btn btn-ghost">Explore Solutions</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-avatars">
+          <span class="av" style="background:#ff6b6b">J</span>
+          <span class="av" style="background:#4ecdc4">M</span>
+          <span class="av" style="background:#45b7d1">S</span>
+          <span class="av" style="background:#96ceb4">A</span>
+        </div>
+        <p class="trust-text"><strong>5,000+</strong> brands already trust ArovaGrowth</p>
+      </div>
+    </div>
+
+    <!-- Right visual card -->
+    <div class="hero-card-wrap">
+      <div class="hero-card">
+        <div class="card-topbar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="card-label">Live Data Dashboard</span>
+          <span class="live-badge"><span class="pulse"></span>LIVE</span>
+        </div>
+        <div class="metrics-grid">
+          @for (m of metrics; track m.n) {
+            <div class="metric-box">
+              <span class="m-num">{{ m.n }}</span>
+              <span class="m-lbl">{{ m.l }}</span>
+            </div>
+          }
+        </div>
+        <div class="chart-area">
+          <div class="chart-label">Data Accuracy Rate</div>
+          <div class="bars">
+            <div class="bar-col"><div class="bar-fill" style="height:64%"></div><span>Q1</span></div>
+            <div class="bar-col"><div class="bar-fill" style="height:78%"></div><span>Q2</span></div>
+            <div class="bar-col"><div class="bar-fill" style="height:71%"></div><span>Q3</span></div>
+            <div class="bar-col"><div class="bar-fill hi" style="height:96%"></div><span>Q4</span></div>
+            <div class="bar-col"><div class="bar-fill" style="height:88%"></div><span>Q5</span></div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="cf-left">
+            <svg width="16" height="16" fill="none" stroke="#04c5b2" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>95%+ Verified Accuracy</span>
+          </div>
+          <div class="cf-right">Updated today</div>
+        </div>
+      </div>
+      <!-- Floating badges -->
+      <div class="float-badge fb1">
+        <svg width="18" height="18" fill="none" stroke="#04c5b2" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        GDPR Compliant
+      </div>
+      <div class="float-badge fb2">
+        <svg width="18" height="18" fill="none" stroke="#f95d14" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        2-3 Day Delivery
+      </div>
+    </div>
+  </div>
+
+  <!-- Client ticker -->
+  <div class="ticker-wrap">
+    <div class="container">
+      <span class="ticker-label">Trusted by:</span>
+      <div class="ticker-track">
+        <div class="ticker-inner">
+          @for (c of clients; track c) { <span class="t-name">{{ c }}</span> }
+          @for (c of clients; track c) { <span class="t-name">{{ c }}</span> }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

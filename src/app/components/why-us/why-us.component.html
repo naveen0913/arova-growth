@@ -1,0 +1,18 @@
+<section class="why">
+  <div class="container">
+    <div class="why-top">
+      <span class="tag">Why Choose Us</span>
+      <h2 class="section-title">Choose ArovaGrowth for the<br><em>Ultimate On-Demand Data Solution</em></h2>
+      <p class="section-sub">We have a legacy of assisting startups to Fortune 500 companies across different industries in achieving their business goals.</p>
+    </div>
+    <div class="why-grid">
+      @for (f of features; track f.title) {
+        <div class="why-card">
+          <span class="why-icon">{{ f.icon }}</span>
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

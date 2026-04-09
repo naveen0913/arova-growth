@@ -1,0 +1,29 @@
+<section class="compliance">
+  <div class="container">
+    <div class="comp-inner">
+      <div class="comp-left">
+        <span class="tag">Data Compliance</span>
+        <h2 class="section-title">We Prioritize Safety<br>and <em>Data Privacy</em></h2>
+        <p class="section-sub">Eliminate compliance headaches from your marketing. Our data is 100% globally compliant — market anywhere, stay compliant everywhere.</p>
+        <ul class="comp-list">
+          <li><svg width="16" height="16" fill="none" stroke="#04c5b2" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Triple-verified against global data regulations</li>
+          <li><svg width="16" height="16" fill="none" stroke="#04c5b2" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Opt-in consent records maintained for every contact</li>
+          <li><svg width="16" height="16" fill="none" stroke="#04c5b2" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Zero tolerance for suppression list violations</li>
+          <li><svg width="16" height="16" fill="none" stroke="#04c5b2" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Regular audits by independent compliance teams</li>
+        </ul>
+        <a href="#contact" class="btn btn-navy">Learn About Our Compliance</a>
+      </div>
+      <div class="comp-right">
+        <div class="badge-grid">
+          @for (b of badges; track b.label) {
+            <div class="cbadge" [style.border-color]="b.color + '33'" [style.background]="b.bg">
+              <span class="cb-icon">{{ b.icon }}</span>
+              <span class="cb-label" [style.color]="b.color">{{ b.label }}</span>
+              <span class="cb-desc">{{ b.desc }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+<section class="ds" id="data-solutions">
+  <div class="container">
+    <div class="ds-top">
+      <span class="tag">Build Any Audience You Need</span>
+      <h2 class="section-title">Build Your Targeted Audience by<br><em>Industry, Region, Role & Technology</em></h2>
+      <p class="section-sub">Reach the right decision-makers faster with precisely segmented B2B audiences tailored by industry, geography, job role, and technology usage.</p>
+    </div>
+
+    <!-- Tab pills -->
+    <div class="tab-pills">
+      @for (t of tabs; track t.id) {
+        <button class="pill" [class.active]="active() === t.id" (click)="active.set(t.id)">
+          {{ t.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Tab content -->
+    <div class="tab-panel">
+      <div class="panel-copy">
+        <div class="panel-accent" [style.background]="cur.accent + '18'" [style.border-color]="cur.accent + '44'">
+          <span class="dot" [style.background]="cur.accent"></span>
+          {{ cur.label }} Data
+        </div>
+        <h3>{{ cur.title }}</h3>
+        <p>{{ cur.desc }}</p>
+        <ul class="item-list">
+          @for (item of cur.items; track item) {
+            <li>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              {{ item }}
+            </li>
+          }
+        </ul>
+        <div class="panel-btns">
+          <a href="#contact" class="btn btn-orange">Get A Free Quote</a>
+          <a href="#contact" class="btn btn-outline">Know More</a>
+        </div>
+      </div>
+      <div class="panel-visual">
+        <div class="visual-card">
+          <div class="vc-head">
+            <span class="vc-badge" [style.background]="cur.accent + '18'" [style.color]="cur.accent">{{ cur.label }}</span>
+            <span class="vc-count">{{ cur.items.length }} Lists Available</span>
+          </div>
+          <div class="vc-fields">
+            <p class="vc-label">Sample Data Fields Available</p>
+            <div class="field-chips">
+              @for (f of ['Full Name','Job Title','Email Address','Direct Dial','Company','Industry','Revenue','Location','LinkedIn URL','Tech Stack']; track f) {
+                <span class="chip">{{ f }}</span>
+              }
+            </div>
+          </div>
+          <div class="vc-bar">
+            <div class="vc-row"><span>Email Verified</span><div class="prog"><div [style.width]="'95%'" [style.background]="cur.accent"></div></div><span class="pct">95%</span></div>
+            <div class="vc-row"><span>Phone Validated</span><div class="prog"><div [style.width]="'88%'" [style.background]="cur.accent"></div></div><span class="pct">88%</span></div>
+            <div class="vc-row"><span>Data Updated</span><div class="prog"><div [style.width]="'92%'" [style.background]="cur.accent"></div></div><span class="pct">92%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

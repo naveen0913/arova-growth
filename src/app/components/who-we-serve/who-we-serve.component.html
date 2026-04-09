@@ -1,0 +1,21 @@
+<section class="wws" id="solutions">
+  <div class="container">
+    <div class="wws-header">
+      <div>
+        <span class="tag">Who We Work With</span>
+        <h2 class="section-title">Work With Our B2B Data to<br><em>Unleash Your Business Potential</em></h2>
+      </div>
+      <p class="section-sub">Whether you are a marketer, sales professional, or event organizer — we have the data you need, verified and ready to use.</p>
+    </div>
+    <div class="wws-grid">
+      @for (c of cards; track c.title) {
+        <div class="wws-card">
+          <span class="wws-icon">{{ c.icon }}</span>
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.desc }}</p>
+          <a href="#contact" class="wws-link">Learn more →</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
