@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TabQueryParamService } from '../../services/tab-query-param.service';
 
 interface Tab { id: string; label: string; title: string; desc: string; items: string[]; accent: string; }
 
@@ -10,8 +11,20 @@ interface Tab { id: string; label: string; title: string; desc: string; items: s
   templateUrl: './data-solutions.component.html',
   styleUrls: ['./data-solutions.component.scss']
 })
-export class DataSolutionsComponent {
+export class DataSolutionsComponent implements OnInit {
   active = signal('healthcare');
+
+  constructor(private tabService: TabQueryParamService) {}
+
+  ngOnInit() {
+    const validTabs = this.tabs.map(t => t.id);
+    this.tabService.initialize('healthcare', validTabs);
+    this.active = this.tabService.getActiveTab();
+  }
+
+  setActive(id: string) {
+    this.tabService.setActiveTab(id);
+  }
 
   tabs: Tab[] = [
     { id: 'healthcare', label: 'Healthcare', accent: '#10b981',
@@ -40,5 +53,7 @@ export class DataSolutionsComponent {
       items: ['Agriculture Email List','Automotive Industry','Aviation Email List','Biotechnology List','Hotels Email List','Manufacturing Email List','Real Estate List','Retail Email List','Travel Agents List','Beauty Industry List','Construction Email List','Finance Industry List'] },
   ];
 
-  get cur(): Tab { return this.tabs.find(t => t.id === this.active())!; }
+  get cur(): Tab { 
+    return this.tabs.find(t => t.id === this.active())!; 
+  }
 }

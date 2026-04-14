@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { StatsBarComponent } from '../../components/stats-bar/stats-bar.component';
-import { WhoWeServeComponent } from '../../components/who-we-serve/who-we-serve.component';
 import { DataSolutionsComponent } from '../../components/data-solutions/data-solutions.component';
 import { OurProcessComponent } from '../../components/our-process/our-process.component';
 import { WhyUsComponent } from '../../components/why-us/why-us.component';
 import { ComplianceComponent } from '../../components/compliance/compliance.component';
 import { CtaBannerComponent } from '../../components/cta-banner/cta-banner.component';
+import { WhoWeServeComponent } from '../../components/who-we-serve/who-we-serve.component';
 
 @Component({
   selector: 'app-home',

@@ -2,7 +2,7 @@ import { Component, HostListener, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
-interface NavLink { label: string; path: string; }
+interface NavLink { label: string; path: string; queryParams?: { [key: string]: any }; }
 interface NavItem { label: string; id: string; links: NavLink[]; }
 
 @Component({
@@ -23,7 +23,9 @@ export class NavbarComponent {
   setDrop(id: string) { this.openDrop.set(id); }
   clearDrop() { this.openDrop.set(''); }
   toggleMenu() { this.menuOpen.update(v => !v); }
-  toggleMobDrop(id: string) { this.openDrop.update(v => v === id ? '' : id); }
+  toggleMobDrop(id: string) { 
+    this.openDrop.update(v => v === id ? '' : id); 
+  }
   close() {
     this.menuOpen.set(false); this.openDrop.set('');
   }
@@ -34,43 +36,40 @@ export class NavbarComponent {
       label: 'Company',
       links: [
         { label: 'About Us', path: '/about' },
-        { label: 'Client Testimonials', path: '/resources' },
-        { label: 'Our Team', path: '/about' }
+        // { label: 'Client Testimonials', path: '/resources' },
       ]
     },
     {
       id: 'data',
       label: 'Data Solutions',
       links: [
-        { label: 'Healthcare Email List', path: '/data-solutions' },
-        { label: 'Technology Users List', path: '/data-solutions' },
-        { label: 'Industry Email List', path: '/data-solutions' },
-        { label: 'International Email List', path: '/data-solutions' },
-        { label: 'C-Level Executives', path: '/data-solutions' },
-        { label: 'Professionals List', path: '/data-solutions' }
+        { label: 'Healthcare Email List', path: '/data-solutions', queryParams: { tab: 'healthcare' } },
+        { label: 'Technology Users List', path: '/data-solutions', queryParams: { tab: 'technology' } },
+        { label: 'Industry Email List', path: '/data-solutions', queryParams: { tab: 'industry' } },
+        { label: 'International Email List', path: '/data-solutions', queryParams: { tab: 'international' } },
+        { label: 'C-Level Executives', path: '/data-solutions', queryParams: { tab: 'clevels' } },
+        { label: 'Professionals List', path: '/data-solutions', queryParams: { tab: 'professionals' } }
       ]
     },
     {
       id: 'services',
       label: 'Services',
       links: [
-        { label: 'B2B Email List', path: '/services' },
-        { label: 'Email Appending', path: '/services' },
-        { label: 'Data Appending', path: '/services' },
-        { label: 'Data Enrichment', path: '/services' },
-        { label: 'Data Validation', path: '/services' },
-        { label: 'Direct Dials', path: '/services' }
+        { label: 'B2B Email List', path: '/services/b2b-email-list' },
+        { label: 'Email Appending', path: '/services/email-appending' },
+        { label: 'Data Appending', path: '/services/data-appending' },
+        { label: 'Data Enrichment', path: '/services/data-enrichment' },
+        { label: 'Data Validation', path: '/services/data-validation' },
+        { label: 'Direct Dials', path: '/services/direct-dials' }
       ]
     },
     {
       id: 'knowledge',
       label: 'Knowledge',
       links: [
-        { label: 'Case Studies', path: '/resources' },
-        { label: 'Infographics', path: '/resources' },
-        { label: 'White Papers', path: '/resources' },
-        { label: 'Podcasts', path: '/resources' },
-        { label: 'Videos & Webinars', path: '/resources' }
+        { label: 'Case Studies', path: '/case-study' },
+        // { label: 'Infographics', path: '/resources' },
+        { label: 'White Papers', path: '/white-paper' },
       ]
     }
   ];

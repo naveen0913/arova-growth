@@ -12,7 +12,7 @@
       </a>
     </div>
     <div class="topbar-right">
-      <span>Trusted by 5,000+ B2B Brands Globally</span>
+      <span>Trusted by 1,000+ B2B Brands Globally</span>
     </div>
   </div>
 </div>
@@ -51,7 +51,7 @@
             <div class="drop-inner">
               <p class="drop-head">{{ item.label }}</p>
               @for (link of item.links; track link) {
-                <a [routerLink]="link.path" class="drop-link" (click)="close()">
+                <a [routerLink]="[link.path]" [queryParams]="link.queryParams" class="drop-link" (click)="close()">
                   <span class="drop-arrow">→</span> {{ link.label }}
                 </a>
               }
@@ -85,7 +85,7 @@
           @if (openDrop() === item.id) {
             <div class="mob-sub">
               @for (link of item.links; track link) {
-                <a [routerLink]="link.path" (click)="close()">{{ link.label }}</a>
+                <a [routerLink]="[link.path]" [queryParams]="link.queryParams" (click)="close()">{{ link.label }}</a>
               }
             </div>
           }

@@ -14,6 +14,7 @@ export class CtaBannerComponent {
   company = signal('');
   service = signal('');
   sent    = signal(false);
+  message = signal('');
 
   onSubmit() {
     if (this.name() && this.email()) { this.sent.set(true); }

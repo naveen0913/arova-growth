@@ -4,7 +4,7 @@
     <div class="container ft-inner">
       <!-- Brand col -->
       <div class="ft-brand">
-        <a class="logo" href="#">
+        <a class="logo" routerLink="/">
           <div class="logo-mark">
             <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
               <path d="M4 28 L16 4 L28 28 Z" fill="white" opacity=".9"/>
@@ -28,7 +28,7 @@
         </div>
         <div class="socials">
           @for (s of socials; track s.name) {
-            <a [attr.aria-label]="s.name" href="#" (click)="$event.preventDefault()">
+            <a [attr.aria-label]="s.name" [href]="s.url" target="_blank" rel="noopener noreferrer">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path [attr.d]="s.path"/></svg>
             </a>
           }
@@ -41,7 +41,7 @@
           <h4>{{ col.head }}</h4>
           <ul>
             @for (link of col.links; track link) {
-              <li><a href="#" (click)="$event.preventDefault()">{{ link }}</a></li>
+              <li><a [routerLink]="link.path">{{ link.label }}</a></li>
             }
           </ul>
         </div>
@@ -54,10 +54,9 @@
     <div class="container fb-inner">
       <p>© {{ year }} ArovaGrowth. All rights reserved.</p>
       <div class="fb-links">
-        <a href="#" (click)="$event.preventDefault()">Privacy Policy</a>
-        <a href="#" (click)="$event.preventDefault()">Terms of Service</a>
-        <a href="#" (click)="$event.preventDefault()">Cookie Policy</a>
-        <a href="#" (click)="$event.preventDefault()">GDPR</a>
+        @for (link of bottomLinks; track link) {
+          <a [routerLink]="link.path">{{ link.label }}</a>
+        }
       </div>
     </div>
   </div>

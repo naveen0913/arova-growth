@@ -21,12 +21,36 @@ export const appConfig: ApplicationConfig = {
         loadComponent: () => import('./pages/services/services.component').then((m) => m.ServicesPageComponent)
       },
       {
+        path: 'services/:id',
+        loadComponent: () => import('./pages/services/services.component').then((m) => m.ServicesPageComponent)
+      },
+      {
         path: 'resources',
         loadComponent: () => import('./pages/resources/resources.component').then((m) => m.ResourcesPageComponent)
       },
       {
         path: 'contact',
         loadComponent: () => import('./pages/contact/contact.component').then((m) => m.ContactPageComponent)
+      },
+      {
+        path: 'white-paper',
+        loadComponent: () => import('./pages/white-paper/white-paper.component').then((m) => m.WhitePaperComponent)
+      },
+      {
+        path: 'case-study',
+        loadComponent: () => import('./pages/case-study/case-study.component').then((m) => m.CaseStudyComponent)
+      },
+      {
+        path: 'privacy-policy',
+        loadComponent: () => import('./pages/privacy-policy/privacy-policy.component').then((m) => m.PrivacyPolicyComponent)
+      },
+      {
+        path: 'terms-of-service',
+        loadComponent: () => import('./pages/terms-of-service/terms-of-service.component').then((m) => m.TermsOfServiceComponent)
+      },
+      {
+        path: 'cookie-policy',
+        loadComponent: () => import('./pages/cookie-policy/cookie-policy.component').then((m) => m.CookiePolicyComponent)
       },
       {
         path: 'our-process',

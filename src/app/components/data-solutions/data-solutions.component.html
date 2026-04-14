@@ -9,7 +9,7 @@
     <!-- Tab pills -->
     <div class="tab-pills">
       @for (t of tabs; track t.id) {
-        <button class="pill" [class.active]="active() === t.id" (click)="active.set(t.id)">
+        <button class="pill" [class.active]="active() === t.id" (click)="setActive(t.id)">
           {{ t.label }}
         </button>
       }

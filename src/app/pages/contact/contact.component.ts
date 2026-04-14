@@ -13,13 +13,14 @@ import { CtaBannerComponent } from '../../components/cta-banner/cta-banner.compo
         <p>Ready to boost your B2B pipeline? Reach out and let's build your next data-driven campaign.</p>
         <dl>
           <dt>Email</dt>
-          <dd><a href="mailto:info@arovagrowth.com">infoarovagrowth.com</a></dd>
+          <dd><a href="mailto:info@arovagrowth.com">info[at]arovagrowth.com</a></dd>
           <dt>Phone</dt>
-          <dd><a href="tel:+18002248308">+1 (800) 224-8308</a></dd>
+          <dd><a href="tel:+18002248308">+91 123 456 7890</a></dd>
         </dl>
       </div>
     </section>
     <app-cta-banner></app-cta-banner>
-  `
+  `,
+  styleUrls: ['./contact.component.scss']
 })
 export class ContactPageComponent {}

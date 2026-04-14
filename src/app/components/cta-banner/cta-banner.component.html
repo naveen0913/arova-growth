@@ -50,6 +50,10 @@
                 <option>Custom Database</option>
               </select>
             </div>
+             <div class="field">
+              <label>Message</label>
+              <textarea name="message" rows="3" id="" placeholder="Tell us about your project..." [ngModel]="message()" (ngModelChange)="message.set($event)"></textarea>
+            </div>
           </div>
           <button class="btn btn-orange submit-btn" (click)="onSubmit()">
             Request Free Quote

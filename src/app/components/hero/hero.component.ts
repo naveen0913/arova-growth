@@ -25,9 +25,9 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   clients = ['Cigna','McKesson','KPMG','Oracle','IBM','Deloitte','SAP','UHC','Pfizer','Salesforce','Microsoft','AstraZeneca'];
   metrics = [
-    { n:'700M+', l:'B2B Contacts' },
-    { n:'110M+', l:'Decision Makers' },
-    { n:'15M+',  l:'C-Level Contacts' },
+    { n:'7M+', l:'B2B Contacts' },
+    { n:'1M+', l:'Decision Makers' },
+    { n:'1.5M+',  l:'C-Level Contacts' },
     { n:'95%+',  l:'Data Accuracy' },
   ];
 }
