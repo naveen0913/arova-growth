@@ -73,7 +73,7 @@ export class CtaBannerComponent {
           alert('Failed to send quote request.');
         }
       },
-      error: (error) => {
+      error: (error:any) => {
         this.isLoading.set(false);
         console.error(error);
         alert('Something went wrong. Please try again later.');
