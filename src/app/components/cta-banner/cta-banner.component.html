@@ -55,10 +55,25 @@
               <textarea name="message" rows="3" id="" placeholder="Tell us about your project..." [ngModel]="message()" (ngModelChange)="message.set($event)"></textarea>
             </div>
           </div>
-          <button class="btn btn-orange submit-btn" (click)="onSubmit()">
-            Request Free Quote
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
+          <button
+  class="btn btn-orange submit-btn"
+  (click)="onSubmit()"
+  [disabled]="isLoading()">
+
+  {{ isLoading() ? 'Sending...' : 'Request Free Quote' }}
+
+  <svg
+    *ngIf="!isLoading()"
+    width="16"
+    height="16"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.5"
+    viewBox="0 0 24 24">
+    <path d="M5 12h14M12 5l7 7-7 7"/>
+  </svg>
+
+</button>
           <p class="form-note">🔒 Your data is safe. We never share your information with third parties.</p>
         </div>
       } @else {
