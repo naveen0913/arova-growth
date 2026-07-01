@@ -14,8 +14,7 @@ import { CtaBannerComponent } from '../../components/cta-banner/cta-banner.compo
         <dl>
           <dt>Email</dt>
           <dd><a href="mailto:info@arovagrowth.com">info[at]arovagrowth.com</a></dd>
-          // <dt>Phone</dt>
-          // <dd><a href="tel:+18002248308">+91 123 456 7890</a></dd>
+          
         </dl>
       </div>
     </section>
